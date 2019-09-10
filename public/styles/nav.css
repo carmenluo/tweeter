@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    z-index: 1000;
+    font-family: 'Bungee';
+    color: #FFFF;
+}
+
+nav span {
+    position: relative;
+    top: 1.5em;
+    bottom: 1.5em;
+    left: 1.5em;
+    right: 1.5em;
+}
