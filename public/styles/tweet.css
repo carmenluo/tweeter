@@ -1,0 +1,41 @@
+.tweetsection {
+    margin-top: 20px;
+    border: solid 2px rgb(31, 14, 14);
+}
+
+.tweetsection:hover {
+    font-weight: 600;
+}
+
+article.tweet {
+    width: 96%;
+    margin-left: 2%;
+}
+
+div.header {
+    display: flex;
+    /*  justify-content: center;
+     For horizontal alignment */
+    align-items: center;
+}
+
+div.header div {
+    display: none;
+    justify-content: right;
+}
+
+.tweetsection:hover div.header div {
+    display: block;
+}
+
+article p {
+    border-bottom: 2px solid rgb(31, 14, 14);
+}
+
+article footer div#timestamp {
+    float: left;
+}
+
+article footer div {
+    float: right;
+}
