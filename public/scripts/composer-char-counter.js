@@ -8,7 +8,7 @@ $(document).ready(function() {
         let maxlength = parseInt($(this).siblings('span').text());
         let val = $(this).val();
         $(this).siblings('span').html(maxlength - 1);
-        if (vallength > maxlength) {
+        if (val.length > maxlength) {
             $(this).siblings('span').css('color', 'red');
         }
     })

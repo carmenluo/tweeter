@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 const createTweetElement = function(tweetData) {
+    const submitTweet = (event)
     const $tweet = $("<article>").addClass("tweet");
 
     const $p = $("<p>");
@@ -54,10 +55,27 @@ const data = [{
         "created_at": 1461113959088
     }
 ]
-
+const loadtweets = function() {
+    $.ajax({
+        url: "/tweets",
+        dataType: "JSON"
+    })
+}
 
 
 // Test / driver code (temporary)
 $(document).ready(function() {
     renderTweets(data);
+    $('form').on("submit", (event) => {
+        event.preventDefault();
+        $.ajax({
+            type: "POST",
+            // url: $(this).attr('action'),
+            url: "/tweets",
+            data: $('form').serialize(),
+            success: function(data) {
+                alert(data);
+            }
+        })
+    })
 })
