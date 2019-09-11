@@ -1,15 +1,10 @@
-.tweetsection {
+article.tweet {
     margin-top: 20px;
     border: solid 2px rgb(31, 14, 14);
 }
 
-.tweetsection:hover {
+article.tweet:hover {
     font-weight: 600;
-}
-
-article.tweet {
-    width: 96%;
-    margin-left: 2%;
 }
 
 div.header {
@@ -24,12 +19,16 @@ div.header div {
     justify-content: right;
 }
 
-.tweetsection:hover div.header div {
+article.tweet div.header div {
     display: block;
 }
 
 article p {
     border-bottom: 2px solid rgb(31, 14, 14);
+}
+
+article footer {
+    height: 2em;
 }
 
 article footer div#timestamp {

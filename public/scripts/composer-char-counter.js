@@ -6,7 +6,6 @@
 $(document).ready(function() {
     $('#textArea').on('keypress', function() {
         let maxlength = parseInt($(this).siblings('span').text());
-        console.log(maxlength);
         let val = $(this).val();
         let vallength = val.length;
         $(this).siblings('span').html(maxlength - vallength);
@@ -15,7 +14,6 @@ $(document).ready(function() {
         }
     })
 })
-alert(maxlength - vallength);
 
 // $('#textArea').on('keyup', function() {
 
