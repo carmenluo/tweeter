@@ -1,3 +1,7 @@
+ section.new-tweet {
+     display: none;
+ }
+ 
  form {
      font-family: 'Source Sans Pro', sans-serif;
  }

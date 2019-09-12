@@ -29,7 +29,10 @@
 
     <!-- Top nav bar (fixed) -->
     <nav>
-        <span>tweeter</span>
+        <span id="title">tweeter</span>
+        <span class="newtweet" id="write">Write&nbsp; </span>
+        <span class="newtweet"> a new Tweet</span>
+        <img src='images/arrow.png' class="all-scroll">
     </nav>
     <header>
         <div>
@@ -46,6 +49,9 @@
         Think classic lorem ipsum is passé? Give your next project a bit more edge with these funny and unique text generators.
         <section class="new-tweet">
             <h2>Compose Tweet</h2>
+            <div class="alert alert-danger" role="alert">
+                error:
+            </div>
             <form action="/tweets" method="POST" enctype="application/x-www-form-urlencoded">
                 <textarea id='textArea' name='text' placeholder="What are you humming about?"></textarea>
                 <input type="submit" value="Tweet">
@@ -58,7 +64,7 @@
                     <img src="images/bunny.jpg" height="50px" width="50px"> Dani
                     <div>@Carmen</div>
                 </div>
-                <header>hello i am a header</header>
+                <!--<header>hello i am a header</header>-->
                 <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p>
                 <footer>
                     <div id="timestamp">10 days ago</div>
@@ -66,7 +72,6 @@
                     <div class="icon">icon2</div>
                     <div class="icon">icon3</div>
                 </footer>
-            </article>
         </section>
     </main>
 

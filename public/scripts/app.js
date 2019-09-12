@@ -62,9 +62,17 @@ const loadtweets = async function() {
     }
 }
 
+const slideSection = function() {
+        $('.all-scroll').click(function() {
+            $('.new-tweet').slideDown('slow', function() {
+                $('textArea').focus();
+            });
+        })
 
-// Test / driver code (temporary)
+    }
+    // Test / driver code (temporary)
 $(document).ready(function() {
+    slideSection();
     //    renderTweets(alldata);
     $('form').on("submit", (event) => {
         let text = $("#textArea").val();

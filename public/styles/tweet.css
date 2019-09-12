@@ -7,6 +7,11 @@ article.tweet:hover {
     font-weight: 600;
 }
 
+article>header {
+    align-items: center;
+    top: 0px;
+}
+
 div.header {
     display: flex;
     /*  justify-content: center;
@@ -15,11 +20,11 @@ div.header {
 }
 
 div.header div {
-    display: block;
+    display: none;
     justify-content: right;
 }
 
-article.tweet div.header div {
+article.tweet:hover div.header div {
     display: block;
 }
 
