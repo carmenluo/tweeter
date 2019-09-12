@@ -2,6 +2,10 @@
      display: none;
  }
  
+ section div.alert {
+     display: none;
+ }
+ 
  form {
      font-family: 'Source Sans Pro', sans-serif;
  }

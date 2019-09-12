@@ -63,14 +63,21 @@ const loadtweets = async function() {
 }
 
 const slideSection = function() {
-        $('.all-scroll').click(function() {
-            $('.new-tweet').slideDown('slow', function() {
-                $('textArea').focus();
-            });
-        })
+    $('.all-scroll').click(function() {
+        $('.new-tweet').slideDown('slow', function() {
+            $('textArea').focus();
+        });
+    })
 
-    }
-    // Test / driver code (temporary)
+}
+const slideErrorMessage = function(str) {
+
+    $('section div.alert').slideDown('slow', function() {
+        $(this).html(`Error: ${str}`);
+    });
+}
+
+// Test / driver code (temporary)
 $(document).ready(function() {
     slideSection();
     //    renderTweets(alldata);
@@ -91,9 +98,11 @@ $(document).ready(function() {
                 }
             })
         } else if (text.length > 140) {
-            alert("Text too long");
+            //alert();
+            slideErrorMessage("Text too long");
         } else {
-            alert("Can't be empty");
+            // alert("Can't be empty");
+            slideErrorMessage("Can't be empty");
         }
     })
 })
