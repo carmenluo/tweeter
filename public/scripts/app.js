@@ -23,59 +23,60 @@ const createTweetElement = function(tweetData) {
     console.log($tweet);
     return $tweet;
 }
-const renderTweets = function(tweets) {
+const renderTweets = function(tweet) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    for (let tweet of tweets) {
-        const $tweet = createTweetElement(tweet);
-        $('#tweetsection').append($tweet);
-    }
+
+    const $tweet = createTweetElement(tweet);
+    $('#tweetsection').append($tweet);
+
 }
-const data = [{
-        "user": {
-            "name": "Newton",
-            "avatars": "https://i.imgur.com/73hZDYK.png",
-            "handle": "@SirIsaac"
-        },
-        "content": {
-            "text": "If I have seen further it is by standing on the shoulders of giants"
-        },
-        "created_at": 1461116232227
+
+const alldata = [{
+    "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
     },
-    {
-        "user": {
-            "name": "Descartes",
-            "avatars": "https://i.imgur.com/nlhLi3I.png",
-            "handle": "@rd"
-        },
-        "content": {
-            "text": "Je pense , donc je suis"
-        },
-        "created_at": 1461113959088
-    }
-]
-const loadtweets = function() {
-    $.ajax({
+    "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+}]
+const loadtweets = async function() {
+    let res = await $.ajax({
         url: "/tweets",
         dataType: "JSON"
-    })
+    });
+    for (let tweet of res) {
+        console.log(tweet);
+        alldata.push(tweet);
+    }
 }
 
 
 // Test / driver code (temporary)
 $(document).ready(function() {
-    renderTweets(data);
+    //    renderTweets(alldata);
     $('form').on("submit", (event) => {
+        let text = $("#textArea").val();
+
         event.preventDefault();
-        $.ajax({
-            type: "POST",
-            // url: $(this).attr('action'),
-            url: "/tweets",
-            data: $('form').serialize(),
-            success: function(data) {
-                alert(data);
-            }
-        })
+        if (text !== null && text.length !== 0 && text.length < 140) {
+            $.ajax({
+                type: "POST",
+                // url: $(this).attr('action'),
+                url: "/tweets",
+                data: $('form').serialize(),
+                success: function(data) {
+                    renderTweets(data);
+                }
+            })
+        } else if (text.length > 140) {
+            alert("Text too long");
+        } else {
+            alert("Can't be empty");
+        }
     })
 })
