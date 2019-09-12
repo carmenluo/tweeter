@@ -3,12 +3,19 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const escape = function(str) {
+    let $div = document.createElement('div');
+    console.log(str);
+    $div.append(document.createTextNode(str));
+    console.log($div.innerHTML);
+    return $div.innerHTML;
+}
 const createTweetElement = function(tweetData) {
     const submitTweet = (event)
     const $tweet = $("<article>").addClass("tweet");
 
     const $p = $("<p>");
-    $p.html(tweetData.content.text);
+    $p.html(escape(tweetData.content.text));
     const $footer = $("<footer>");
 
     const days = Math.floor((new Date().getTime() - tweetData.created_at) / 86400 / 1000);
@@ -70,6 +77,8 @@ $(document).ready(function() {
                 url: "/tweets",
                 data: $('form').serialize(),
                 success: function(data) {
+                    $("#textArea").val('');
+                    $(".counter").html("140");
                     renderTweets(data);
                 }
             })
