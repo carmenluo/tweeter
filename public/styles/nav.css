@@ -19,21 +19,36 @@
     
     nav span.newtweet {
         font-family: 'Times New Roman', Times, serif;
-        position: relative;
-        top: 1.5em;
-        bottom: 1.5em;
-    }
-    
-    nav img {
-        width: 20px;
-        height: 20px;
-    }
-    
-    nav img:hover {
-        cursor: all-scroll;
+        align-items: flex-end;
     }
     
     #write {
         padding-left: 400px;
         font-weight: 600;
+    }
+    
+    .arrow {
+        position: absolute;
+        top: 50%;
+        width: 3vmin;
+        height: 3vmin;
+        background: transparent;
+        border-top: 1vmin solid white;
+        border-right: 1vmin solid white;
+        box-shadow: 0 0 0 lightgray;
+        transition: all 200ms ease;
+    }
+    
+    .right {
+        right: 0;
+        transform: translate3d(0, -50%, 0) rotate(135deg);
+    }
+    
+    .right:hover {
+        border-color: orange;
+        box-shadow: 0.5vmin -0.5vmin 0 white
+    }
+    
+    nav img:hover {
+        cursor: all-scroll;
     }
