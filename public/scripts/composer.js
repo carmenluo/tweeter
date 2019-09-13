@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  * 
  */
+
 const scrollTop = function () {
     let y = window.scrollY;
     if (y > 0) {

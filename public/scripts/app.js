@@ -8,28 +8,60 @@ const escape = function(str) {
     let $div = document.createElement('div');
     $div.append(document.createTextNode(str));
     return $div.innerHTML;
-}
-const createTweetElement = function(tweetData) {
-
-    const $tweet = $("<article>").addClass("tweet");
-    //header node
+  }
+  //create header node
+  const createHeader = (tweetData) => {
     const $header = $("<div>").addClass("header");
     const $img = $("<img>", { src: tweetData.user.avatars, width: 50, height: 50 });
     const $username = $("<div>").addClass("username").html(`${tweetData.user.name}`);
     const $handle = $("<div>").addClass("handle").html(`${tweetData.user.handle}`);
     $header.append($img).append($username).append($handle);
-    //article node
+    return $header;
+  };
+  //create articl node
+  const createP = (tweetData) => {
     const $p = $("<p>");
     $p.html(escape(tweetData.content.text));
-    //footer node
+    return $p;
+  };
+  //based on current to to calcalte new tweet time stamp before post it
+  const getTimeStamp = (millseconds) => {
+      console.log(millseconds);
+    let days = Math.floor(millseconds / 86400 / 1000);
+    let hours = Math.floor(millseconds / 3600 / 1000);
+    let minutes = Math.floor(millseconds / 600 / 1000);
+    console.log(`${days}, ${hours}, ${minutes}`)
+    if (days !== 0) {
+      return `${days} days ago`;
+    } else if (hours !== 0) {
+      return `${hours} hours ago`;
+    } else {
+      return `${minutes} minutes ago`;
+    }
+  }
+  //create footer node: num of days ago, small icons
+  const createFooter = (tweetData) => {
     const $footer = $("<footer>");
-    const days = Math.floor((new Date().getTime() - tweetData.created_at) / 86400 / 1000);
-    const $timeStamp = $("<div>").attr("id", "timestamp").html(`${days} days ago`);
+    const $time = getTimeStamp(new Date().getTime() - tweetData.created_at);
+    const $timeStamp = $("<div>").attr("id", "timestamp").html(`${$time}`);
     const $div1 = $("<div>").addClass("icon").html("<i class='fab fa-font-awesome-flag'></i>");
     const $div2 = $("<div>").addClass("icon").html("<i class='fas fa-retweet'></i>");
     const $div3 = $("<div>").addClass("icon").html("<i class='fas fa-heart'></i>");
     $footer.append($div1).append($div2).append($div3);
     $footer.append($timeStamp);
+    return $footer;
+  };
+  
+//create every child node and tweet node and
+const createTweetElement = function(tweetData) {
+
+    const $tweet = $("<article>").addClass("tweet");
+    //add header node
+    const $header = createHeader(tweetData);
+    //article node}
+    const $p = createP(tweetData);
+    //footer node
+    const $footer = createFooter(tweetData);
     //Append whole things to tweet
     $tweet.append($header).append($p).append($footer);
     return $tweet;
