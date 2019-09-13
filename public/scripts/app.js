@@ -45,7 +45,7 @@ const renderTweets = function(tweets) {
         $('#tweetsection').append($tweet);
     }
 }
-
+//When ajax get all the tweets, call renderTweets to reload then again
 const loadtweets = function() {
     $.ajax({
         url: "/tweets",
@@ -55,7 +55,7 @@ const loadtweets = function() {
         }
     });
 }
-
+//Click compose button, when displayed then collapse, vice verse.
 const slideSection = function() {
     $('.all-scroll').click(function() {
         console.log($('new-tweet').style);
@@ -67,8 +67,9 @@ const slideSection = function() {
             $('.new-tweet').slideUp('slow');
         }
     })
-
-}
+};
+//1. show error message when we textarea null or over 140 characters
+//2. Collapse error message if submit sucessfully
 const slideErrorMessage = function(str) {
     if (!str) {
         $('section div.alert').slideUp('slow', function() {
@@ -81,7 +82,8 @@ const slideErrorMessage = function(str) {
     }
 }
 
-// Test / driver code (temporary)
+//Every time make requrest, check error message, loadtweets
+//TODO: try to make document ready at the top
 $(document).ready(function() {
     slideSection();
     loadtweets();
