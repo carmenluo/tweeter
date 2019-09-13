@@ -5,9 +5,7 @@
  */
 const escape = function(str) {
     let $div = document.createElement('div');
-    console.log(str);
     $div.append(document.createTextNode(str));
-    console.log($div.innerHTML);
     return $div.innerHTML;
 }
 const createTweetElement = function(tweetData) {
@@ -58,7 +56,6 @@ const loadtweets = function() {
 //Click compose button, when displayed then collapse, vice verse.
 const slideSection = function() {
     $('.all-scroll').click(function() {
-        console.log($('new-tweet').style);
         if ($('.new-tweet').css('display') == 'none') {
             $('.new-tweet').slideDown('slow', function() {
                 $('textArea').focus();

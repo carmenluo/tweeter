@@ -43,7 +43,10 @@ main a.toptweet {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-/* Another smartphone breakpoint is maximum width of around 420px */
+/* 3 breakpoints:
+    1. maximum 350px
+    2, smartphone between 351px and 767px
+    3. tablet bigger than 768px*/
 
 @media only screen and (min-width: 351px) and (max-width: 767px) {
     /* Write smartphone only styles here */

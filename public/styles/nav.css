@@ -10,12 +10,12 @@
     
     nav span#title {
         float: left;
-        padding: 2.5em;
+        padding: 1.5em;
     }
     
     nav div.newtweet {
         float: right;
-        padding: 2.5em;
+        padding: 1.5em;
     }
     
     nav div.newtweet {
@@ -24,7 +24,9 @@
         justify-content: center;
         font-family: 'Times New Roman', Times, serif;
     }
-    
+    /*
+    .arrow .right .right:hover are css for compose new tweet
+    */
     .arrow {
         margin-top: 10px;
         width: 3vmin;

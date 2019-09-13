@@ -34,14 +34,18 @@
         padding-top: 60px;
         padding-bottom: 5px;
         padding-left: 5px;
+        padding-right: 5px;
         overflow-wrap: break-word;
     }
-    
+    /*
+    Set border to ariticle, in order to make this underline a bit smaller than border,
+    use after (pure css) to create pseudoelement to generate this bottom border
+    */
     article p:after {
         content: "";
         display: block;
         margin: 0 auto;
-        width: 98%;
+        width: 100%;
         padding-top: 10px;
         border-bottom: 2px solid rgb(31, 14, 14);
     }

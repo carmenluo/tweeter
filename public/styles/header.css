@@ -13,6 +13,8 @@ header {
 
 header img {
     vertical-align: middle;
+    width: 200px;
+    height: 200px;
     max-width: 100%;
     height: auto;
 }
