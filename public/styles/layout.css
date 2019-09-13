@@ -32,6 +32,14 @@ main {
     margin: 0 auto;
     padding-top: 120px;
 }
+main a.toptweet {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    color: rgb(197, 45, 45);
+    text-align: right;
+    opacity: 0.8;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
