@@ -37,7 +37,7 @@ main {
  */
 /* Another smartphone breakpoint is maximum width of around 420px */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 351px) and (max-width: 767px) {
     /* Write smartphone only styles here */
     nav {
         height: 60px;
@@ -60,14 +60,10 @@ main {
         margin: 0 auto;
     }
 }
-/* Tablet: minimum width of 768px to maximum width of 1024px */
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Write Tablet only CSS here */
-}
 /* Another tablet breakpoint is minimum width of 768px */
 
-@media only screen and (max-width: 351px) and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
     /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
     header {
         width: 25%;
@@ -86,8 +82,7 @@ main {
         padding: 1.5em;
     }
 }
-/* Laptops / Desktops: minimum width of 1024px */
-
+/* when width too small,not show avatar */
 @media only screen and (max-width: 350px) {
     header {
         display: none;
@@ -97,6 +92,11 @@ main {
     }
     nav span#title {
         padding: 0.5em;
+    }
+    nav {
+        background-color: #e36a00;
+        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    
     }
     nav div {
         width: 100%;
@@ -110,6 +110,7 @@ main {
     }
     main {
         padding-top: 30%;
+        width: 95%;
     }
     article {
         height: 60%;

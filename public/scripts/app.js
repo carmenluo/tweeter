@@ -42,7 +42,7 @@ const renderTweets = function(tweets) {
     $('#tweetsection').empty();
     for (let tweet of tweets) {
         const $tweet = createTweetElement(tweet);
-        $('#tweetsection').append($tweet);
+        $('#tweetsection').prepend($tweet);
     }
 }
 //When ajax get all the tweets, call renderTweets to reload then again
@@ -94,7 +94,6 @@ $(document).ready(function() {
         if (text !== null && text.length !== 0 && text.length < 140) {
             $.ajax({
                 type: "POST",
-                // url: $(this).attr('action'),
                 url: "/tweets",
                 data: $('form').serialize(),
                 success: function(data) {
