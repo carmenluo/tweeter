@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//create escape function to prevent xss
 const escape = function(str) {
     let $div = document.createElement('div');
     $div.append(document.createTextNode(str));
@@ -86,7 +87,7 @@ $(document).ready(function() {
     loadtweets();
     $('form').on("submit", (event) => {
         let text = $("#textArea").val();
-
+//prevent default submit function and cause we call the ajax
         event.preventDefault();
         if (text !== null && text.length !== 0 && text.length < 140) {
             $.ajax({
