@@ -14,4 +14,11 @@ This repository is the starter code for the project: Students will fork and clon
 ## Dependencies
 
 - Express
+- Chance
+- Body-Parser
 - Node 5.10.x or above
+
+## Screenshots
+
+- [Destop Main Page]("https://github.com/carmenluo/tweeter/blob/master/docs/destop.png")
+- [Tablet Main Page]("https://github.com/carmenluo/tweeter/blob/master/docs/tablet.png")
