@@ -20,5 +20,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-- [Destop Main Page]("https://github.com/carmenluo/tweeter/blob/master/docs/destop.png")
-- [Tablet Main Page]("https://github.com/carmenluo/tweeter/blob/master/docs/tablet.png")
+!["Destop Main Page"](https://github.com/carmenluo/tweeter/blob/master/docs/destop.png)
+!["Tablet Main Page"](https://github.com/carmenluo/tweeter/blob/master/docs/tablet.png)
