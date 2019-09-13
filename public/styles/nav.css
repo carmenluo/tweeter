@@ -1,6 +1,4 @@
     nav {
-        display: flex;
-        flex-direction: row;
         position: fixed;
         height: 120px;
         width: 100%;
@@ -11,25 +9,24 @@
     }
     
     nav span#title {
-        position: relative;
-        top: 1.5em;
-        bottom: 1.5em;
-        left: 1.5em;
+        float: left;
+        padding: 2.5em;
     }
     
-    nav span.newtweet {
+    nav div.newtweet {
+        float: right;
+        padding: 2.5em;
+    }
+    
+    nav div.newtweet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         font-family: 'Times New Roman', Times, serif;
-        align-items: flex-end;
-    }
-    
-    #write {
-        padding-left: 400px;
-        font-weight: 600;
     }
     
     .arrow {
-        position: absolute;
-        top: 50%;
+        margin-top: 10px;
         width: 3vmin;
         height: 3vmin;
         background: transparent;
@@ -40,8 +37,8 @@
     }
     
     .right {
-        right: 0;
         transform: translate3d(0, -50%, 0) rotate(135deg);
+        margin-left: 50px;
     }
     
     .right:hover {

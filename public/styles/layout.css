@@ -3,9 +3,9 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-
-html {
-    box-sizing: border-box;
+            
+  html {
+      box-sizing: border-box;
 }
 
 *,
@@ -13,17 +13,14 @@ html {
 *:after {
     box-sizing: inherit;
 }
-
-
 /*
  * Global layout stuff
  */
-
+            
 body {
     color: #545149;
     background-color: #f4f1ec;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
 }
 
 h2 {
@@ -31,15 +28,91 @@ h2 {
     margin-block-end: 10px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 5%;
-    width: 90%;
-    justify-content: center;
+main {
+    margin: 0 auto;
+    padding-top: 120px;
 }
-
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/* Another smartphone breakpoint is maximum width of around 420px */
+
+@media only screen and (max-width: 768px) {
+    /* Write smartphone only styles here */
+    nav {
+        height: 60px;
+        background-color: #e36a00;
+        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    }
+    header {
+        top: 60px;
+        height: 200px;
+        text-align: center;
+    }
+    header img {
+        width: 50%;
+        height: 50;
+    }
+    main {
+        padding-top: 70px;
+        margin-top: 40px;
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+/* Tablet: minimum width of 768px to maximum width of 1024px */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Write Tablet only CSS here */
+}
+/* Another tablet breakpoint is minimum width of 768px */
+
+@media only screen and (max-width: 351px) and (min-width: 769px) {
+    /* Write CSS rules that target Tablets screen sizes upwards - including desktops */
+    header {
+        width: 25%;
+        height: 70%;
+        float: left;
+        margin: 2%;
+    }
+    main {
+        margin-top: 10px;
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        width: 66.7%;
+        float: right;
+    }
+    nav div.newtweet {
+        padding: 1.5em;
+    }
+}
+/* Laptops / Desktops: minimum width of 1024px */
+
+@media only screen and (max-width: 350px) {
+    header {
+        display: none;
+    }
+    nav span {
+        width: 100%;
+    }
+    nav span#title {
+        padding: 0.5em;
+    }
+    nav div {
+        width: 100%;
+        height: 50%;
+        font-size: 80%;
+        background-color: #e36a00;
+        background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+    }
+    nav div.newtweet {
+        padding: 1.5em;
+    }
+    main {
+        padding-top: 30%;
+    }
+    article {
+        height: 60%;
+        font: 7px;
+    }
+}

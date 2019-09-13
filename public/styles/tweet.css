@@ -1,45 +1,64 @@
-article.tweet {
-    margin-top: 20px;
-    border: solid 2px rgb(31, 14, 14);
-}
-
-article.tweet:hover {
-    font-weight: 600;
-}
-
-article>header {
-    align-items: center;
-    top: 0px;
-}
-
-div.header {
-    display: flex;
-    /*  justify-content: center;
-     For horizontal alignment */
-    align-items: center;
-}
-
-div.header div {
-    display: none;
-    justify-content: right;
-}
-
-article.tweet:hover div.header div {
-    display: block;
-}
-
-article p {
-    border-bottom: 2px solid rgb(31, 14, 14);
-}
-
-article footer {
-    height: 2em;
-}
-
-article footer div#timestamp {
-    float: left;
-}
-
-article footer div {
-    float: right;
-}
+    article.tweet {
+        margin-top: 20px;
+        border: solid 2px rgb(31, 14, 14);
+    }
+    
+    article.tweet:hover {
+        font-weight: 600;
+        box-shadow: 5px 5px gray
+    }
+    
+    article div img {
+        float: left;
+        margin: 5px;
+    }
+    
+    article div.username {
+        float: left;
+        padding-left: 0.5em;
+        padding-top: 1em;
+    }
+    
+    article div.handle {
+        display: none;
+        float: right;
+        padding-top: 1em;
+        padding: 0.5em;
+    }
+    
+    article.tweet:hover div.handle {
+        display: block;
+    }
+    
+    article p {
+        padding-top: 60px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        overflow-wrap: break-word;
+    }
+    
+    article p:after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 98%;
+        padding-top: 10px;
+        border-bottom: 2px solid rgb(31, 14, 14);
+    }
+    
+    article footer {
+        height: 2em;
+    }
+    
+    article footer div#timestamp {
+        float: left;
+    }
+    
+    article footer div {
+        float: right;
+    }
+    
+    div.icon {
+        color: #4056A1;
+        padding: 2px;
+    }

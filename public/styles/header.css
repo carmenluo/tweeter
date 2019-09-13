@@ -10,3 +10,15 @@ header {
     width: 100%;
     align-items: center;
 }
+
+header img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+header h2 {
+    margin-block-start: 5px;
+    margin-block-end: 10px;
+    font-size: 3.5vw;
+}

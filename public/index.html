@@ -3,21 +3,25 @@
 
 <head>
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
     <!-- Externa fonts -->
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css">
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css">
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <!--Font library-->
+    <script src="https://kit.fontawesome.com/9428355209.js"></script>
+
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -31,10 +35,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
         <span id="title">tweeter</span>
-        <span class="newtweet" id="write">Write&nbsp; </span>
-        <span class="newtweet"> a new Tweet</span>
-        <img src='images/arrow.png' class="all-scroll">
-        <a href="#" class="arrow right all-scroll"></a>
+        <div class="newtweet">
+            <span class="newtweet" id="write"><strong>Write&nbsp;</strong> a new Tweet </span>
+            <a href="#" class="arrow right all-scroll"></a>
+        </div>
     </nav>
     <header>
         <div>
@@ -48,10 +52,9 @@
     <!-- Page-specific (main) content here -->
 
     <main class="container">
-        Think classic lorem ipsum is passé? Give your next project a bit more edge with these funny and unique text generators.
         <section class="new-tweet">
             <h2>Compose Tweet</h2>
-            <div class="alert alert-danger" role="alert">
+            <div class="alert" role="alert">
             </div>
             <form action="/tweets" method="POST" enctype="application/x-www-form-urlencoded">
                 <textarea id='textArea' name='text' placeholder="What are you humming about?"></textarea>
@@ -61,17 +64,18 @@
         </section>
         <section id="tweetsection">
             <article class="tweet">
-                <div class='header'>
-                    <img src="images/bunny.jpg" height="50px" width="50px"> Dani
-                    <div>@Carmen</div>
-                </div>
+
+                <img src="images/bunny.jpg" height="50px" width="50px">
+                <div class="username">Dani</div>
+                <div class="handle">@Carmen</div>
+
                 <!--<header>hello i am a header</header>-->
                 <p>WWF's mission is to stop the degradation of our planet's natural environment, and build a future in which humans live in harmony with nature.</p>
                 <footer>
                     <div id="timestamp">10 days ago</div>
-                    <div class="icon">icon1</div>
-                    <div class="icon">icon2</div>
-                    <div class="icon">icon3</div>
+                    <div class="icon"><i class="fab fa-font-awesome-flag"></i></div>
+                    <div class="icon"><i class="fas fa-retweet"></i></div>
+                    <div class="icon"><i class="fas fa-heart"></i></div>
                 </footer>
         </section>
     </main>

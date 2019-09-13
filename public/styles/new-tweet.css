@@ -10,6 +10,12 @@
      font-family: 'Source Sans Pro', sans-serif;
  }
  
+ .alert {
+     color: red;
+     border: 2px solid red;
+     border-radius: 5px;
+ }
+ 
  textarea {
      justify-content: center;
      height: 50px;
@@ -23,6 +29,7 @@
  form input {
      font-family: 'Bungee';
      background-color: #4056A1;
+     color: black;
  }
  
  input::placeholder {
